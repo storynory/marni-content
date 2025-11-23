@@ -1,0 +1,181 @@
+backend:
+  name: github
+  repo: storynory/marni-content
+  branch: main
+
+publish_mode: editorial_workflow
+
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
+media_libraries:
+  default:
+    config:
+      # (Optional, but helpful) make sure your UI accepts typical image types
+      accept_mime_types:
+        - image/jpeg
+        - image/png
+        - image/webp
+        - image/svg+xml
+
+      transformations:
+        raster_image:
+          format: webp      # only 'webp' is supported
+          quality: 85       # default 85
+          width: 2048       # max width (no upscaling)
+          height: 2048      # max height (no upscaling)
+        svg:
+          optimize: true
+
+collections:
+  - name: "recipes"
+    label: "Recipes"
+    folder: "recipes"
+    create: true
+    slug: "{{slug}}"
+
+    fields:
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "draft", label: "Draft (Off is Published)", widget: "boolean", default: true, required: false }
+      - { name: "exerpt", label: "Excerpt for top of post", widget: "markdown", required: false }
+      - { name: "body", label: "Recipe Notes", widget: "markdown", required: false }
+      - { name: "date", label: "Date", widget: "datetime", required: false }
+      - { name: "thumbnail", label: "Thumbnail", widget: "image", required: false }
+      - { name: "alt", label: "Describe Thumbnail image in about 6 words", widget: "string", required: false }
+      
+      - name: "ingredients"
+        label: "Ingredients"
+        widget: "list"
+        collapsed: true
+        required: false
+
+      - name: "instructions"
+        label: "Instructions"
+        widget: "list"
+        collapsed: true
+        required: false 
+        
+      - { name: "methodNotes", label: "Method Notes", widget: "markdown", class: "method-field", required: false }
+     
+      - name: "tags"
+        label: "Tags"
+        widget: "relation"
+        collection: "tags"
+        multiple: true
+        required: false
+        search_fields: ["title"]
+        value_field: "slug"
+        display_fields: ["title"]
+
+      - name: "seasons"
+        label: "Season"
+        widget: "relation"
+        collection: "seasons"
+        multiple: true      # keep true so a recipe can belong to more than one season
+        required: false
+        search_fields: ["title"]
+        value_field: "slug"
+        display_fields: ["title"]
+
+    
+  - name: "blog"
+    label: "Blog"
+    folder: "blog"
+    create: true
+    slug: "{{slug}}"
+
+    fields:
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "date", label: "Date", widget: "datetime", required: false }
+      - { name: "thumbnail", label: "Thumbnail", widget: "image", required: false }
+      - { name: "excerpt", label: "Excerpt", widget: "text", required: false }
+      - { name: "body", label: "Body", widget: "markdown", required: false }
+      - { name: "draft", label: "Draft", widget: "boolean", default: true, required: false }
+
+  - name: "pages"
+    label: "Pages"
+    folder: "pages"
+    create: true
+    slug: "{{slug}}"
+
+    fields:
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "date", label: "Date", widget: "datetime", required: false }
+      - { name: "thumbnail", label: "Thumbnail", widget: "image", required: false }
+      - { name: "excerpt", label: "Excerpt", widget: "text", required: false }
+      - { name: "body", label: "Body", widget: "markdown", required: false }
+      - { name: "draft", label: "Draft", widget: "boolean", default: true, required: false }
+
+
+
+  - name: "tags"
+    label: "Tags"
+    folder: "tags"
+    create: true
+    slug: "{{slug}}"
+
+    fields:
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "slug", label: "Slug", widget: "string" }
+      - { name: "description", label: "Description", widget: "string", required: false }
+
+      - name: "image"
+        label: "Image"
+        widget: "image"
+        required: false
+
+      - { name: "draft", label: "Draft", widget: "boolean", default: false, required: false }
+
+  - name: "seasons"
+    label: "Seasons"
+    folder: "seasons"
+    create: true
+    slug: "{{slug}}"
+
+    fields:
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "slug", label: "Slug", widget: "string" }
+      - { name: "description", label: "Description", widget: "string", required: false }
+
+      - name: "image"
+        label: "Image"
+        widget: "image"
+        required: false
+
+  # ------------------------------------------------
+  # Site settings singleton
+  # ------------------------------------------------
+  - name: "settings"
+    label: "Site Settings"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - file: "settings/site.md"
+        label: "Site Settings"
+        name: "site"
+        fields:
+          # optional hidden title, if you like having one
+          - { name: "title", label: "Internal Title", widget: "hidden", default: "Site settings" }
+
+          - { name: "siteTitle", label: "Site Title", widget: "string" }
+          - { name: "siteTagline", label: "Site Tagline", widget: "string", required: false }
+          - { name: "siteIntroTitle", label: "Site Intro Title (Hero section on home page)", widget: "string", required: false }
+          - { name: "siteIntro", label: "Site Intro (Hero Text)", widget: "text", required: false }
+          - { name: "blogPageIntro", label: "Intro at top of Blog Page", widget: "text", required: false }
+          - { name: "search_fieldseasonsPageIntro", label: "Intro at top of Seasons Page", widget: "text", required: false }
+          - { name: "recipesPageIntro", label: "Intro at top of Recipes Page", widget: "text", required: false }
+          - name: "portrait"
+            label: "Hero Portrait for Front Page"
+            widget: "image"
+            required: false
+
+          - name: "featuredSeason"
+            label: "Featured Season (for homepage, none is fine)"
+            widget: "relation"
+            collection: "seasons"
+            multiple: false      # single season choice here
+            required: false      # allow “none”
+            search_fields: ["title"]
+            value_field: "slug"
+            display_fields: ["title"]
