@@ -1,7 +1,10 @@
 ---
 title: Chocolate Orange Olive Oil Cake
+draft: false
+exerpt: ''
 date: 2025-11-17
 thumbnail: /uploads/Chocolate_Orange_Olive_Oil_Cake_--ar_169_--v_7_97d4fe7f-9b4c-461d-87b6-c818eed86b18_3.webp
+alt: A delicious chocolate cake with leaves on top
 ingredients:
   - Cocoa
   - Baking Powder
@@ -18,12 +21,12 @@ instructions:
   - Scrape the batter into the tin and smooth the top.
   - Bake for 35–40 minutes, or until a skewer comes out with just a few moist crumbs.
   - Cool in the tin for 10 minutes, then move to a rack. Dust with cocoa or icing sugar before serving.
+  - Pink milk
 methodNotes: ''
 tags:
   - Cakes
 seasons:
   - christmas
-draft: false
 method: ''
 ---
 A deeply chocolatey cake with a gentle hint of orange and the soft crumb you get from baking with olive oil. It feels a little bit special but is easy enough for a weekday pudding.
