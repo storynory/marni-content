@@ -5,4 +5,4 @@ thumbnail: /uploads/blackberries.webp
 excerpt: My prefect day in rural Shabbingdon
 draft: false
 ---
-It was winter. The snow was lying thick on the ground .  But in my secret garden, shiny blackberries were growing on the hedges like magic in Richmond.
+It was winter. The snow was lying thick on the ground .  But in my secret garden, shiny blackberries were growing on the hedges like magic in Richmond Park.
