@@ -10,8 +10,10 @@ jobs:
     steps:
       - name: Call deploy hook
         run: |
-          curl -X POST "https://marni.hughfraser.co.uk/deploy-hook" \
+          echo "Pinging deploy hook..."
+          curl -v -f "https://marni.hughfraser.co.uk/deploy-hook" \
             -H "Content-Type: application/json" \
             -H "X-Deploy-Token: ${{ secrets.Marni_Deploy }}" \
             -d '{"site":"marni"}'
+          echo "Done."
 
