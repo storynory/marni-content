@@ -2,18 +2,32 @@ name: Deploy Marni site (content changes)
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
+    # Only trigger when actual content changes, not when workflows change
+    paths:
+      - '**/*.md'
+      - 'blog/**'
+      - 'recipes/**'
+      - 'pages/**'
+      - 'static/**'
+    paths-ignore:
+      - '.github/workflows/**'
 
 jobs:
   ping-deploy-hook:
     runs-on: ubuntu-latest
+
     steps:
       - name: Call deploy hook
+        env:
+          DEPLOY_URL: https://marni.hughfraser.co.uk/deploy-hook
+          DEPLOY_TOKEN: ${{ secrets.Marni_Deploy }}
         run: |
-          echo "Pinging deploy hook..."
-          curl -v -f "https://marni.hughfraser.co.uk/deploy-hook" \
+          echo "Pinging $DEPLOY_URL..."
+          curl -sS -v -f "$DEPLOY_URL" \
             -H "Content-Type: application/json" \
-            -H "X-Deploy-Token: ${{ secrets.Marni_Deploy }}" \
+            -H "X-Deploy-Token: $DEPLOY_TOKEN" \
             -d '{"site":"marni"}'
-          echo "Done."
+          echo "Deploy hook pinged successfully."
 
