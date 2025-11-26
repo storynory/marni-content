@@ -1,7 +1,10 @@
 ---
 title: Cocoa Spice Loaf
+draft: false
+exerpt: Spice up your life with this cinnamon and ginger Chocolate cake
 date: 2025-11-27T08:00:00Z
 thumbnail: /uploads/Cocoa_Spice_Loaf_.webp
+alt: Cocoa Spice Loaf
 ingredients:
   - 180 g plain flour
   - 30 g cocoa powder
@@ -18,6 +21,5 @@ instructions:
 methodNotes: Great toasted with butter.
 tags:
   - christmas
-draft: false
 ---
 
