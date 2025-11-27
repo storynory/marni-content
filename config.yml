@@ -2,7 +2,7 @@ backend:
   name: github
   repo: storynory/marni-content
   branch: main
-
+  base_url: https://sveltia-cms-auth.hugh-6ba.workers.dev
 publish_mode: editorial_workflow
 
 media_folder: "static/uploads"
