@@ -162,8 +162,8 @@ collections:
           - { name: "siteTagline", label: "Site Tagline", widget: "string", required: false }
           - { name: "siteIntroTitle", label: "Site Intro Title (Hero section on home page)", widget: "string", required: false }
           - { name: "siteIntro", label: "Site Intro (Hero Text)", widget: "text", required: false }
-          - { name: "blogPageIntro", label: "Intro at top of Blog Page", widget: "text", required: false }
-          - { name: "search_fieldseasonsPageIntro", label: "Intro at top of Seasons Page", widget: "text", required: false }
+          - { name: "blogPageIntro", label: "Intro at top of Blog Page", widget: "text", default: "default text", required: false }
+          - { name: "seasonsPageIntro", label: "Intro at top of Seasons Page", widget: "text", required: false }
           - { name: "recipesPageIntro", label: "Intro at top of Recipes Page", widget: "text", required: false }
           - name: "portrait"
             label: "Hero Portrait for Front Page"
@@ -180,5 +180,5 @@ collections:
             value_field: "slug"
             display_fields: ["title"]
 
-          - { name: "fontFamily", label: "Headings Font", widget: "string", default: "Fraunces", required: false }
-          
+          - { name: "fontFamily", label: "Header Font", widget: "select", options: ["Baloo 2", "Comfortaa", "Fraunces", "Quicksand", "Varela Round", "Delius"] }
+
