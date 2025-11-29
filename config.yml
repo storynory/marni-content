@@ -180,10 +180,5 @@ collections:
             value_field: "slug"
             display_fields: ["title"]
 
+          - { name: "fontFamily", label: "Headings Font", widget: "string", default: "Fraunces", required: false }
           
-
-        - label: "Heading Font"
-          name: "fontFamily"
-          widget: "string"
-          default: "Frauncis"
-          required: true
