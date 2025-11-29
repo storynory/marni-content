@@ -8,7 +8,7 @@ search_fieldseasonsPageIntro: ''
 recipesPageIntro: This is Recipes Intro
 portrait: /uploads/cooking-girl-square.webp
 featuredSeason: christmas
-fontFamily: Baloo 2
+fontFamily: Comfortaa
 strapline: ''
 seasonsPageIntro: ''
 ---
