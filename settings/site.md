@@ -8,7 +8,7 @@ search_fieldseasonsPageIntro: ''
 recipesPageIntro: ''
 portrait: /uploads/cooking-girl-square.webp
 featuredSeason: christmas
-fontFamily: fraunces
+fontFamily: Delius
 strapline: ''
 ---
 
