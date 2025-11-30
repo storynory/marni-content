@@ -10,10 +10,10 @@ main:
   portrait: /uploads/cooking-girl-square.webp
   featuredSeason: christmas
   activeScheme: Material
-  fontFamily: Quicksand
-strapline: ''
-fontFamily: Varela Round
+  fontFamily: Delius
 blogPageIntro: Marni's kitchen Diary
+fontFamily: Varela Round
+strapline: ''
 siteTitle: Marni's Kitchen
 siteTagline: Delicious Dishes
 siteIntroTitle: Hello, I'm Marni...
