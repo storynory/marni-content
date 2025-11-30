@@ -142,43 +142,77 @@ collections:
         widget: "image"
         required: false
 
-  # ------------------------------------------------
-  # Site settings singleton
-  # ------------------------------------------------
-  - name: "settings"
-    label: "Site Settings"
-    delete: false
-    editor:
-      preview: false
-    files:
-      - file: "settings/site.md"
-        label: "Site Settings"
-        name: "site"
-        fields:
-          # optional hidden title, if you like having one
-          - { name: "title", label: "Internal Title", widget: "hidden", default: "Site settings" }
+# ------------------------------------------------
+# Site settings singleton
+# ------------------------------------------------
+- name: "settings"
+  label: "Site Settings"
+  delete: false
+  editor:
+    preview: false
+  files:
+    - file: "settings/site.md"
+      label: "Site Settings"
+      name: "site"
 
-          - { name: "siteTitle", label: "Site Title", widget: "string" }
-          - { name: "siteTagline", label: "Site Tagline", widget: "string", required: false }
-          - { name: "siteIntroTitle", label: "Site Intro Title (Hero section on home page)", widget: "string", required: false }
-          - { name: "siteIntro", label: "Site Intro (Hero Text)", widget: "text", required: false }
-          - { name: "blogPageIntro", label: "Intro at top of Blog Page", widget: "text", default: "default text", required: false }
-          - { name: "seasonsPageIntro", label: "Intro at top of Seasons Page", widget: "text", required: false }
-          - { name: "recipesPageIntro", label: "Intro at top of Recipes Page", widget: "text", required: false }
-          - name: "portrait"
-            label: "Hero Portrait for Front Page"
-            widget: "image"
-            required: false
+      fields:
+        - { name: "title", label: "Internal Title", widget: "hidden", default: "Site settings" }
 
-          - name: "featuredSeason"
-            label: "Featured Season (for homepage, none is fine)"
-            widget: "relation"
-            collection: "seasons"
-            multiple: false      # single season choice here
-            required: false      # allow “none”
-            search_fields: ["title"]
-            value_field: "slug"
-            display_fields: ["title"]
+        # ------------------------------------------
+        # MAIN SETTINGS (grouped)
+        # ------------------------------------------
+        - label: "Main Settings"
+          name: "main"
+          widget: "object"
+          collapsed: false
+          fields:
+            - { name: "siteTitle", label: "Site Title", widget: "string" }
+            - { name: "siteTagline", label: "Site Tagline", widget: "string", required: false }
+            - { name: "siteIntroTitle", label: "Site Intro Title (Hero section on home page)", widget: "string", required: false }
+            - { name: "siteIntro", label: "Site Intro (Hero Text)", widget: "text", required: false }
+            - { name: "blogPageIntro", label: "Intro at top of Blog Page", widget: "text", default: "default text", required: false }
+            - { name: "seasonsPageIntro", label: "Intro at top of Seasons Page", widget: "text", required: false }
+            - { name: "recipesPageIntro", label: "Intro at top of Recipes Page", widget: "text", required: false }
 
-          - { name: "fontFamily", label: "Header Font", widget: "select", options: ["Baloo 2", "Comfortaa", "Fraunces", "Quicksand", "Varela Round", "Delius"] }
+            - name: "portrait"
+              label: "Hero Portrait for Front Page"
+              widget: "image"
+              required: false
+
+            - name: "featuredSeason"
+              label: "Featured Season (for homepage, none is fine)"
+              widget: "relation"
+              collection: "seasons"
+              multiple: false
+              required: false
+              search_fields: ["title"]
+              value_field: "slug"
+              display_fields: ["title"]
+
+            # SELECT ACTIVE COLOUR SCHEME
+            - label: "Active Colour Scheme"
+              name: "activeScheme"
+              widget: "select"
+              options: "{{colourSchemes.map(s => s.name)}}"
+              required: false
+
+            - { name: "fontFamily", label: "Header Font", widget: "select",
+                options: ["Baloo 2", "Comfortaa", "Fraunces", "Quicksand", "Varela Round", "Delius"] }
+
+
+        # ------------------------------------------
+        # COLOUR SCHEMES SECTION
+        # ------------------------------------------
+        - label: "Colour Schemes"
+          name: "colourSchemes"
+          widget: "list"
+          collapsed: true
+          summary: "{{name}}"
+          fields:
+            - { label: "Scheme Name", name: "name", widget: "string" }
+            - { label: "Prime",   name: "prime",   widget: "color", default: "#e3d2b7", allowInput: true }
+            - { label: "Accent",  name: "accent",  widget: "color", default: "#00634e", allowInput: true }
+            - { label: "Second",  name: "second",  widget: "color", default: "#f4e8d7", allowInput: true }
+            - { label: "Gray",    name: "gray",    widget: "color", default: "#f8f9fa", allowInput: true }
+            - { label: "Text",    name: "text",    widget: "color", default: "#333333", allowInput: true }
 
