@@ -9,11 +9,11 @@ main:
   recipesPageIntro: This is where you can find all my recipes
   portrait: /uploads/cooking-girl-square.webp
   featuredSeason: christmas
-  activeScheme: Default
+  activeScheme: Material
   fontFamily: Delius
-strapline: ''
-fontFamily: Varela Round
 blogPageIntro: Marni's kitchen Diary
+fontFamily: Varela Round
+strapline: ''
 siteTitle: Marni's Kitchen
 siteTagline: Delicious Dishes
 siteIntroTitle: Hello, I'm Marni...
