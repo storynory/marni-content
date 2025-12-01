@@ -4,8 +4,6 @@ backend:
   branch: main
   base_url: https://sveltia-cms-auth.hugh-6ba.workers.dev
 
-publish_mode: editorial_workflow
-
 media_folder: "static/uploads"
 public_folder: "/uploads"
 
@@ -28,6 +26,7 @@ media_libraries:
           optimize: true
 
 collections:
+
   # ------------------------------------------------
   # Recipes
   # ------------------------------------------------
@@ -160,7 +159,7 @@ collections:
 
 
   # ------------------------------------------------
-  # Colour Schemes (new collection)
+  # Colour Schemes
   # ------------------------------------------------
   - name: "colour-schemes"
     label: "Colour Schemes"
@@ -177,63 +176,60 @@ collections:
       - { label: "Text",    name: "text",    widget: "color", default: "#333333" }
 
 
-# ------------------------------------------------
-# Site Settings
-# ------------------------------------------------
-- name: "settings"
-  label: "Site Settings"
-  delete: false
-  editor:
-    preview: false
+  # ------------------------------------------------
+  # Site Settings (FLAT)
+  # ------------------------------------------------
+  - name: "settings"
+    label: "Site Settings"
+    delete: false
+    editor:
+      preview: false
 
-  files:
-    - file: "settings/site.md"
-      label: "Site Settings"
-      name: "site"
+    files:
+      - file: "settings/site.md"
+        label: "Site Settings"
+        name: "site"
 
-      fields:
-        - { name: "title", label: "Internal Title", widget: "hidden", default: "Site settings" }
+        fields:
+          - { name: "title", label: "Internal Title", widget: "hidden", default: "Site settings" }
 
-        # --- FLAT FIELDS (no object, no nesting) ---
+          - { name: "siteTitle", label: "Site Title", widget: "string" }
+          - { name: "siteTagline", label: "Site Tagline", widget: "string", required: false }
+          - { name: "siteIntroTitle", label: "Site Intro Title", widget: "string", required: false }
+          - { name: "siteIntro", label: "Site Intro (Hero Text)", widget: "text", required: false }
 
-        - { name: "siteTitle", label: "Site Title", widget: "string" }
-        - { name: "siteTagline", label: "Site Tagline", widget: "string", required: false }
-        - { name: "siteIntroTitle", label: "Site Intro Title", widget: "string", required: false }
-        - { name: "siteIntro", label: "Site Intro (Hero Text)", widget: "text", required: false }
+          - { name: "blogPageIntro", label: "Intro at top of Blog Page", widget: "text", default: "default text", required: false }
+          - { name: "seasonsPageIntro", label: "Intro at top of Seasons Page", widget: "text", required: false }
+          - { name: "recipesPageIntro", label: "Intro at top of Recipes Page", widget: "text", required: false }
 
-        - { name: "blogPageIntro", label: "Intro at top of Blog Page", widget: "text", default: "default text", required: false }
-        - { name: "seasonsPageIntro", label: "Intro at top of Seasons Page", widget: "text", required: false }
-        - { name: "recipesPageIntro", label: "Intro at top of Recipes Page", widget: "text", required: false }
+          - name: "portrait"
+            label: "Hero Portrait for Front Page"
+            widget: "image"
+            required: false
 
-        - name: "portrait"
-          label: "Hero Portrait for Front Page"
-          widget: "image"
-          required: false
+          - name: "featuredSeason"
+            label: "Featured Season (for homepage)"
+            widget: "relation"
+            collection: "seasons"
+            multiple: false
+            required: false
+            search_fields: ["title"]
+            value_field: "slug"
+            display_fields: ["title"]
 
-        - name: "featuredSeason"
-          label: "Featured Season (for homepage)"
-          widget: "relation"
-          collection: "seasons"
-          multiple: false
-          required: false
-          search_fields: ["title"]
-          value_field: "slug"
-          display_fields: ["title"]
+          - label: "Active Colour Scheme"
+            name: "activeScheme"
+            widget: "relation"
+            collection: "colour-schemes"
+            multiple: false
+            required: false
+            search_fields: ["title"]
+            value_field: "slug"
+            display_fields: ["title"]
 
-        - label: "Active Colour Scheme"
-          name: "activeScheme"
-          widget: "relation"
-          collection: "colour-schemes"
-          multiple: false
-          required: false
-          search_fields: ["title"]
-          value_field: "slug"
-          display_fields: ["title"]
-
-        - {
-            name: "fontFamily",
-            label: "Header Font",
-            widget: "select",
-            options: ["Baloo 2", "Comfortaa", "Fraunces", "Quicksand", "Varela Round", "Delius"]
-          }
+          - {
+              name: "fontFamily",
+              label: "Header Font",
+              widget: "select",
+              options: ["Baloo 2", "Comfortaa", "Fraunces", "
 
