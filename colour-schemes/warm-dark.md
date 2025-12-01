@@ -1,9 +1,9 @@
 ---
 title: Warm Dark
-prime: '#a8512f'
-accent: '#f1e2c9'
+prime: '#e9a98a'
+accent: '#8c4b2e'
 second: '#f4e8d7'
 gray: '#f8f9fa'
-text: '#0f1e2c'
+text: '#333333'
 ---
 
