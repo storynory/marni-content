@@ -11,7 +11,7 @@ seasonsPageIntro: You can edit this in settings
 recipesPageIntro: You can edit this in settings
 portrait: /uploads/cooking-girl-square.webp
 featuredSeason: christmas
-activeScheme: Warm Dark
+activeScheme: Material
 fontFamily: Delius
 ---
 
