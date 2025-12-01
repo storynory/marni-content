@@ -231,5 +231,6 @@ collections:
               name: "fontFamily",
               label: "Header Font",
               widget: "select",
-              options: ["Baloo 2", "Comfortaa", "Fraunces", "
+              options: ["Baloo 2", "Comfortaa", "Fraunces", "Quicksand", "Varela Round", "Delius"]
+            }
 
