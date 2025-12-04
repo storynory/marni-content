@@ -4,6 +4,6 @@ prime: '#fc9867'
 accent: '#a9dc76'
 second: '#ffd469'
 gray: '#f8f9fa'
-text: '#333333'
+text: '#2e292e'
 ---
 
