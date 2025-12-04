@@ -1,8 +1,8 @@
 ---
 title: Monokai Pro
-prime: '#e3d2b7'
-accent: '#00634e'
-second: '#f4e8d7'
+prime: '#fc9867'
+accent: '#a9dc76'
+second: '#ffd469'
 gray: '#f8f9fa'
 text: '#333333'
 ---
