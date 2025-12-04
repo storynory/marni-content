@@ -1,9 +1,9 @@
 ---
 title: Monokai
-prime: '#00000e'
-accent: '#00634e'
-second: '#f4e8d7'
+prime: '#e87d3e'
+accent: '#b4d273'
+second: '#d6d6d6'
 gray: '#f8f9fa'
-text: '#333333'
+text: '#2e2e2e'
 ---
 
