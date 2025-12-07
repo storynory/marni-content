@@ -12,6 +12,6 @@ recipesPageIntro: You can edit this in settings
 portrait: /uploads/cooking-girl-square.webp
 featuredSeason: christmas
 activeScheme: Monokai
-fontFamily: Baloo 2
+fontFamily: Fraunces
 ---
 
