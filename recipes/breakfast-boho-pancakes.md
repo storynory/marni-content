@@ -1,25 +1,30 @@
 ---
-title: Boho Maple Oat Pancakes
+title: Caramelised Banana Tiramisu Yoghurt Bowl
 draft: false
 exerpt: ''
 date: 2025-11-20T08:00:00Z
-thumbnail: /uploads/pancakes.webp
-alt: Maple syrup dropping onto pancakes
+thumbnail: /uploads/20250808_124322.webp
+alt: bowl of yoghurt
 ingredients:
-  - 120 g rolled oats
-  - 150 ml milk or oat milk
-  - 1 large egg
-  - 1 tbsp maple syrup
-  - 1 tsp baking powder
-  - Butter or oil for frying
+  - 'Chia pudding mix:'
+  - 1/2 ripe banana, mashed
+  - splash of milk
+  - 2 tablespoons mascarpone
+  - 1 tablespoon chia seeds
+  - shot of espresso
+  - 'Yoghurt bowl:'
+  - 200g greek yoghurt
+  - 1 caramelised banana
+  - maple syrup
+  - cocoa powder
 instructions:
-  - Blitz the oats in a blender until flour-like.
-  - Mix with milk, egg, maple syrup, and baking powder.
-  - Rest 5 minutes.
-  - Fry spoonfuls until golden on both sides.
-  - Serve with fruit and more maple syrup.
-methodNotes: The trickiest part is .....
+  - 1. Mix mashed banana, milk, mascarpone, espresso and chia seeds in a little bowl. leave to set in the fridge for 30 minutes.
+  - 2. Meanwhile caramelise your banana in slices and put to the side.
+  - 3. Put greek yoghurt in bowl of choice and create a little well with the back of a spoon. Add in your coffee chia mixture into the middle.
+  - 4. Top with caramelised bananas, maple syrup and dust with cocoa powder.
+  - 5. Enjoy!!!
+methodNotes: ''
 tags:
-  - dessert
+  - breakfast
 ---
 
